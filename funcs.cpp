@@ -9,48 +9,47 @@
 - clear()
 - [] for access and assignment (assuming that given the expression a[n] that n is in range)
 */
-template <typename T, int size>
+#include "funcs.h"
 
-/*
-class vector{
-    public:
-    int size();
-    int capacity();
-    bool empty();
-    T push_back(item);
-    T pop_back(n);
-    bool pop_back();
-    bool clear();
-
-    private:
-        int size;
-}
-*/
-
-int vector::size(){
-
+T &operator[](int i){
+    return dynamicArray[i];
 }
 
-int vector::capacity(){
-
+MyVector::MyVector(T datatype){
+    dynamicArray = new T[10];
+    dynamicArray[0] = datatype;
+    maxSize = 10;
+    currentSize = 0;
+    //Make a empty array with a decent size and set that as the maxsize
 }
 
-bool vector::empty(){
-
+int MyVector::size(){
+    return cuurentSize;
 }
 
-T vector::push_back(item){
-
+int MyVector::capacity(){
+    return maxSize;
 }
 
-T vector::push_back(n){
-
+bool MyVector::empty(){
+    if(size == 0){
+        return true;
+    };
+    return false;
 }
 
-T vector::pop_back(){
-
+void MyVector::push_back(T item){
+    //add item to last slot of array
 }
 
-bool vector::clear(){
-    
+void MyVector::pop_back(int n){
+    //deletes last n things in array
+}
+
+void MyVector::pop_back(){
+    //delete last item in array
+}
+
+void MyVector::clear(){
+    //deletes all the elements in the vector and returns a size of 0.
 }

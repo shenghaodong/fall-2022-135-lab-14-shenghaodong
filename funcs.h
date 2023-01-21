@@ -9,17 +9,23 @@
 - clear()
 - [] for access and assignment (assuming that given the expression a[n] that n is in range)
 */
-template <typename T, int size>
-class vector{
+#pragma once
+template <class T>
+
+class MyVector{
     public:
-    int size();
-    int capacity();
-    bool empty();
-    T push_back(item);
-    T pop_back(n);
-    bool pop_back();
-    bool clear();
+        MyVector(T datatype); //Makes a Vector
+        int size();
+        int capacity();
+        bool empty();
+        void push_back(T item);
+        void pop_back(int n);
+        void pop_back();
+        void clear();
+        T operator[](int i);
 
     private:
-        int size;
-}
+        int currentSize;
+        int maxSize;
+        T *dynamicArray;
+};
