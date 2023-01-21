@@ -11,45 +11,45 @@
 */
 #include "funcs.h"
 
-T &operator[](int i){
-    return dynamicArray[i];
+//template <class T>
+// T &operator[](int i){
+//     return dynamicArray[i];
+// }
+
+template <class T>
+int MyVector<T>::size(){
+    return currentSize;
 }
 
-MyVector::MyVector(T datatype){
-    dynamicArray = new T[10];
-    dynamicArray[0] = datatype;
-    maxSize = 10;
-    currentSize = 0;
-    //Make a empty array with a decent size and set that as the maxsize
-}
-
-int MyVector::size(){
-    return cuurentSize;
-}
-
-int MyVector::capacity(){
+template <class T>
+int MyVector<T>::capacity(){
     return maxSize;
 }
 
-bool MyVector::empty(){
-    if(size == 0){
+template <class T>
+bool MyVector<T>::empty(){
+    if(currentSize == 0){
         return true;
     };
     return false;
 }
 
-void MyVector::push_back(T item){
+template <class T>
+void MyVector<T>::push_back(T item){
     //add item to last slot of array
 }
 
-void MyVector::pop_back(int n){
+template <class T>
+void MyVector<T>::pop_back(int n){
     //deletes last n things in array
 }
 
-void MyVector::pop_back(){
+template <class T>
+void MyVector<T>::pop_back(){
     //delete last item in array
 }
 
-void MyVector::clear(){
+template <class T>
+void MyVector<T>::clear(){
     //deletes all the elements in the vector and returns a size of 0.
 }

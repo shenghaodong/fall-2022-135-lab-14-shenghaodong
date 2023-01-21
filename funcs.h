@@ -14,7 +14,7 @@ template <class T>
 
 class MyVector{
     public:
-        MyVector(T datatype); //Makes a Vector
+        //MyVector(T datatype); //Makes a Vector
         int size();
         int capacity();
         bool empty();
@@ -25,7 +25,10 @@ class MyVector{
         T operator[](int i);
 
     private:
-        int currentSize;
-        int maxSize;
-        T *dynamicArray;
+        T *dynamicArray = new T[10];
+        //dynamicArray = new T[10];
+        int currentSize = 0;
+        int maxSize = 10;
 };
+
+#include "funcs.cxx"
