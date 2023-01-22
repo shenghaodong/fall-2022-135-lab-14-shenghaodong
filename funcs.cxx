@@ -11,10 +11,10 @@
 */
 #include "funcs.h"
 
-//template <class T>
-// T &operator[](int i){
-//     return dynamicArray[i];
-// }
+template <class T>
+T &MyVector<T>::operator[](int i){
+    return dynamicArray[i];
+}
 
 template <class T>
 int MyVector<T>::size(){

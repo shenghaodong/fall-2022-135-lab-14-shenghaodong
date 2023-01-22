@@ -22,7 +22,7 @@ class MyVector{
         void pop_back(int n);
         void pop_back();
         void clear();
-        T operator[](int i);
+        T &operator[](int i);
 
     private:
         T *dynamicArray = new T[10];
