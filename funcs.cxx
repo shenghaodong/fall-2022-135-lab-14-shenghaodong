@@ -13,12 +13,16 @@
 
 template <class T>
 T &MyVector<T>::operator[](int i){
+    if(i > maxSize){
+        //Copy the array to a new one that's bigger
+    }
     return dynamicArray[i];
 }
 
 template <class T>
 int MyVector<T>::size(){
     return currentSize;
+    //Need a way to increase current size when user inputs something in the array
 }
 
 template <class T>

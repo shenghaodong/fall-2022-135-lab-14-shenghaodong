@@ -2,8 +2,8 @@
 #include "funcs.h"
 
 int main(){
-    MyVector<int> testing;
+    MyVector<bool> testing;
     //testing[0] = 5;
-    std::cout << testing.empty() << std::endl;
+    std::cout << testing[0] << std::endl;
     return 0;
 }

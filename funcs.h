@@ -26,7 +26,6 @@ class MyVector{
 
     private:
         T *dynamicArray = new T[10];
-        //dynamicArray = new T[10];
         int currentSize = 0;
         int maxSize = 10;
 };
