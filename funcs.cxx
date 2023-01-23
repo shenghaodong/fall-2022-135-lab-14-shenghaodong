@@ -40,6 +40,14 @@ void MyVector<T>::push_back(T item){
     //add item to last slot of array
     currentSize++;
     dynamicArray[currentSize - 1] = item;
+    if(currentSize == maxSize){
+        //increase array size and copy contents over
+        T tempArray[maxSize];
+        for(int i = 0; i < maxSize; i++){
+            tempArray[i] = dynamicArray[i];
+        }
+        //Copy over contents here
+    }
 }
 
 template <class T>
