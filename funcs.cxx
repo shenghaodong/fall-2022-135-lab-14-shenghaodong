@@ -13,9 +13,6 @@
 
 template <class T>
 T &MyVector<T>::operator[](int i){
-    if(i > maxSize){
-        //Copy the array to a new one that's bigger
-    }
     return dynamicArray[i];
 }
 
@@ -41,19 +38,26 @@ bool MyVector<T>::empty(){
 template <class T>
 void MyVector<T>::push_back(T item){
     //add item to last slot of array
+    currentSize++;
+    dynamicArray[currentSize - 1] = item;
 }
 
 template <class T>
 void MyVector<T>::pop_back(int n){
     //deletes last n things in array
+    if(currentSize - n >= 0){
+        currentSize = currentSize - n;
+    }
 }
 
 template <class T>
 void MyVector<T>::pop_back(){
     //delete last item in array
+    currentSize--;
 }
 
 template <class T>
 void MyVector<T>::clear(){
     //deletes all the elements in the vector and returns a size of 0.
+    currentSize = 0;
 }

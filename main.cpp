@@ -2,8 +2,11 @@
 #include "funcs.h"
 
 int main(){
-    MyVector<bool> testing;
-    //testing[0] = 5;
+    MyVector<int> testing;
+    testing.push_back(3);
     std::cout << testing[0] << std::endl;
+    std::cout << testing.empty() << std::endl;
+    testing.clear();
+    std::cout << testing.empty() << std::endl;
     return 0;
 }
