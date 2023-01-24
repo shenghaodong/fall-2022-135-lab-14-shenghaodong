@@ -41,12 +41,17 @@ void MyVector<T>::push_back(T item){
     currentSize++;
     dynamicArray[currentSize - 1] = item;
     if(currentSize == maxSize){
-        //increase array size and copy contents over
+        //Copy contents on a temporary array
         T tempArray[maxSize];
         for(int i = 0; i < maxSize; i++){
             tempArray[i] = dynamicArray[i];
         }
-        //Copy over contents here
+        //Create new array and copy contents over
+        dynamicArray = new T[maxSize * 2];
+        for(int j = 0; j < maxSize; j++){
+            dynamicArray[j] = tempArray[j];
+        }
+        maxSize = maxSize * 2;
     }
 }
 
@@ -55,6 +60,8 @@ void MyVector<T>::pop_back(int n){
     //deletes last n things in array
     if(currentSize - n >= 0){
         currentSize = currentSize - n;
+    }else{
+        currentSize = 0;
     }
 }
 
