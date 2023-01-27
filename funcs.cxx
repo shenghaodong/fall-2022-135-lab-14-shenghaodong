@@ -47,6 +47,7 @@ void MyVector<T>::push_back(T item){
             tempArray[i] = dynamicArray[i];
         }
         //Create new array and copy contents over
+        delete[] dynamicArray;
         dynamicArray = new T[maxSize * 2];
         for(int j = 0; j < maxSize; j++){
             dynamicArray[j] = tempArray[j];
